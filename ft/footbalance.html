@@ -45,6 +45,34 @@
       font-size: 14px;
       color: #94a3b8;
     }
+
+    .playstore-btn {
+      display: inline-block;
+      margin-top: 12px;
+      background: #22c55e;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .qr-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-top: 16px;
+    }
+
+    .qr-emoji {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      line-height: 1;
+      pointer-events: none;
+    }
   </style>
 </head>
 
@@ -59,8 +87,18 @@
   <div class="card">
     <h2>📱 Applications</h2>
     <ul>
-      <li><a href="ft/footbalance.html">⚽ FootBalance</a></li>
+      <li>⚽ FootBalance</li>
     </ul>
+    <div style="text-align:center;">
+      <a class="playstore-btn" href="https://play.google.com/store/apps/details?id=org.azrousoft.mobile.footbalance" target="_blank">
+        ▶ Télécharger sur Google Play
+      </a>
+      <br>
+      <div class="qr-wrapper">
+        <div id="qrcode"></div>
+        <span class="qr-emoji">⚽</span>
+      </div>
+    </div>
   </div>
 
   <div class="card">
@@ -83,5 +121,16 @@
   📧 footbalance36@gmail.com
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://play.google.com/store/apps/details?id=org.azrousoft.mobile.footbalance",
+    width: 160,
+    height: 160,
+    colorDark: "#0f172a",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
 </body>
 </html>
