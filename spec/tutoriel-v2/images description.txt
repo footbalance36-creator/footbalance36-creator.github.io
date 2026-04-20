@@ -1,0 +1,9 @@
+s1: splash
+s2: choix d'e méthode d'authentification
+s3: selection profil
+s4: list des clubs
+s5: suppression du compte et données
+s6: choix de la langue
+s7: comparaison
+s8: partage
+s9: publication dans les reseaux sociaux
