@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditions d'Utilisation – FootBalance</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #1f2f1f;
+      --green: #2ecc71;
+      --green-dim: #1a7a42;
+      --text: #e2e8e2;
+      --muted: #8a9e8a;
+      --white: #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      color: var(--green);
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .page-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .lang-block {
+      margin-bottom: 3.5rem;
+    }
+
+    .lang-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lang-label::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 14px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.75rem 0;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+
+    .warn-box {
+      background: #1a1200;
+      border: 1px solid #3a2e00;
+      border-left: 3px solid #f39c12;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+      color: #e8d5a0;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--green);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1rem 4rem; }
+      .page-title { font-size: 1.5rem; }
+      header { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-icon">⚽</div>
+    <div>
+      <div class="logo-text">FootBalance <span>by Azrousoft</span></div>
+      <div class="logo-sub">Football Training Tracker</div>
+    </div>
+  </header>
+
+  <main>
+    <p class="page-subtitle">Dernière mise à jour / Last updated — Avril / April 2026</p>
+    <div class="page-title">Conditions d'Utilisation</div>
+    <div class="page-subtitle">Terms of Use</div>
+
+    <!-- ========== FRANÇAIS ========== -->
+    <div class="lang-block">
+      <div class="lang-label">Français</div>
+
+      <h2>1. Présentation</h2>
+      <p>
+        Les présentes conditions régissent l'utilisation de l'application mobile <strong>FootBalance</strong>, éditée par <strong>Azrousoft</strong>.<br>
+        En accédant à l'application, vous acceptez sans réserve les présentes conditions.<br>
+        Contact : <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a> — <a href="https://www.azrousoft.com" target="_blank" rel="noopener">www.azrousoft.com</a>
+      </p>
+
+      <h2>2. Usage personnel</h2>
+      <div class="highlight-box">
+        FootBalance est réservée à un <strong>usage strictement personnel et non commercial</strong>. L'application est mise à disposition d'un utilisateur individuel pour le suivi de ses propres entraînements de football.
+      </div>
+
+      <h2>3. Propriété intellectuelle</h2>
+      <p>L'ensemble des éléments composant FootBalance — code source, design, marques, logos, algorithmes, textes, icônes — est la propriété exclusive d'Azrousoft. Sont strictement interdits :</p>
+      <ul>
+        <li>La reproduction totale ou partielle de l'application ou de son contenu</li>
+        <li>La revente, la redistribution ou la mise à disposition à des tiers</li>
+        <li>La décompilation, le reverse engineering ou toute tentative d'extraction du code source</li>
+        <li>La création d'œuvres dérivées à des fins commerciales</li>
+      </ul>
+
+      <h2>4. Compte utilisateur</h2>
+      <p>
+        Vous êtes responsable de la confidentialité de vos identifiants de connexion et de toutes les activités effectuées depuis votre compte. Azrousoft se réserve le droit de suspendre ou supprimer tout compte en cas d'utilisation abusive ou frauduleuse.
+      </p>
+
+      <h2>5. Modifications du service</h2>
+      <p>
+        Azrousoft se réserve le droit de modifier, suspendre ou interrompre tout ou partie du service FootBalance à tout moment, sans préavis ni indemnité. Des évolutions des fonctionnalités peuvent être déployées sans notification préalable.
+      </p>
+
+      <h2>6. Limitation de responsabilité</h2>
+      <div class="warn-box">
+        FootBalance est fournie "en l'état". Azrousoft ne saurait être tenu responsable des pertes de données, interruptions de service, préjudices indirects ou dommages liés à l'utilisation de l'application. Les données d'entraînement sont fournies à titre indicatif et ne remplacent pas l'avis d'un professionnel sportif ou médical.
+      </div>
+
+      <h2>7. Conduite de l'utilisateur</h2>
+      <p>L'utilisateur s'engage à ne pas :</p>
+      <ul>
+        <li>Utiliser l'application à des fins illicites ou contraires aux présentes conditions</li>
+        <li>Tenter de compromettre la sécurité ou l'intégrité de l'application</li>
+        <li>Publier ou transmettre du contenu offensant, faux ou trompeur</li>
+        <li>Utiliser des moyens automatisés pour accéder ou scraper l'application</li>
+      </ul>
+
+      <h2>8. Résiliation</h2>
+      <p>
+        Vous pouvez cesser d'utiliser FootBalance à tout moment. Azrousoft peut également résilier votre accès en cas de violation des présentes conditions, sans notification préalable.
+      </p>
+
+      <h2>9. Modifications des conditions</h2>
+      <p>
+        Ces conditions peuvent être mises à jour à tout moment. La date de mise à jour figurant en haut de cette page fait foi. La poursuite de l'utilisation de l'application après modification vaut acceptation des nouvelles conditions.
+      </p>
+
+      <h2>10. Droit applicable</h2>
+      <p>
+        Les présentes conditions sont régies par le droit français. En cas de litige, les tribunaux compétents seront ceux du ressort du siège d'Azrousoft.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ========== ENGLISH ========== -->
+    <div class="lang-block">
+      <div class="lang-label">English</div>
+
+      <div style="font-size:1.4rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; letter-spacing:-0.02em;">Terms of Use</div>
+      <p style="margin-bottom:1.5rem;">Last updated — April 2026</p>
+
+      <h2>1. Overview</h2>
+      <p>
+        These terms govern the use of the <strong>FootBalance</strong> mobile application, published by <strong>Azrousoft</strong>.<br>
+        By accessing the application, you unconditionally accept these terms.<br>
+        Contact: <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a> — <a href="https://www.azrousoft.com" target="_blank" rel="noopener">www.azrousoft.com</a>
+      </p>
+
+      <h2>2. Personal Use Only</h2>
+      <div class="highlight-box">
+        FootBalance is intended for <strong>strictly personal, non-commercial use</strong>. The application is made available to individual users for tracking their own football training.
+      </div>
+
+      <h2>3. Intellectual Property</h2>
+      <p>All elements of FootBalance — source code, design, trademarks, logos, algorithms, texts, icons — are the exclusive property of Azrousoft. The following are strictly prohibited:</p>
+      <ul>
+        <li>Total or partial reproduction of the application or its content</li>
+        <li>Resale, redistribution, or making it available to third parties</li>
+        <li>Decompilation, reverse engineering, or any attempt to extract source code</li>
+        <li>Creation of derivative works for commercial purposes</li>
+      </ul>
+
+      <h2>4. User Account</h2>
+      <p>
+        You are responsible for the confidentiality of your login credentials and all activities carried out from your account. Azrousoft reserves the right to suspend or delete any account in cases of misuse or fraud.
+      </p>
+
+      <h2>5. Service Modifications</h2>
+      <p>
+        Azrousoft reserves the right to modify, suspend, or discontinue all or part of the FootBalance service at any time, without notice or compensation. Feature updates may be deployed without prior notification.
+      </p>
+
+      <h2>6. Limitation of Liability</h2>
+      <div class="warn-box">
+        FootBalance is provided "as is." Azrousoft shall not be held liable for data loss, service interruptions, indirect harm, or damages related to use of the application. Training data is provided for informational purposes and does not replace advice from a sports or medical professional.
+      </div>
+
+      <h2>7. User Conduct</h2>
+      <p>Users agree not to:</p>
+      <ul>
+        <li>Use the application for unlawful purposes or in violation of these terms</li>
+        <li>Attempt to compromise the security or integrity of the application</li>
+        <li>Post or transmit offensive, false, or misleading content</li>
+        <li>Use automated means to access or scrape the application</li>
+      </ul>
+
+      <h2>8. Termination</h2>
+      <p>
+        You may stop using FootBalance at any time. Azrousoft may also terminate your access in the event of a breach of these terms, without prior notice.
+      </p>
+
+      <h2>9. Changes to Terms</h2>
+      <p>
+        These terms may be updated at any time. The update date shown at the top of this page is authoritative. Continued use of the application after changes constitutes acceptance of the new terms.
+      </p>
+
+      <h2>10. Governing Law</h2>
+      <p>
+        These terms are governed by French law. In the event of a dispute, the competent courts will be those of the jurisdiction of Azrousoft's registered office.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://www.azrousoft.com" target="_blank" rel="noopener">← Retour au site / Back to website</a>
+    <p>© 2026 Azrousoft · FootBalance · <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a></p>
+  </footer>
+
+</body>
+</html>

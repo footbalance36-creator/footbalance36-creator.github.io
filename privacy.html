@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité – FootBalance</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #1f2f1f;
+      --green: #2ecc71;
+      --green-dim: #1a7a42;
+      --text: #e2e8e2;
+      --muted: #8a9e8a;
+      --white: #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      color: var(--green);
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .page-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--green-dim);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 2.5rem;
+    }
+
+    .lang-block {
+      margin-bottom: 3.5rem;
+    }
+
+    .lang-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lang-label::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 14px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.75rem 0;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--green);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1rem 4rem; }
+      .page-title { font-size: 1.5rem; }
+      header { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-icon">⚽</div>
+    <div>
+      <div class="logo-text">FootBalance <span>by Azrousoft</span></div>
+      <div class="logo-sub">Football Training Tracker</div>
+    </div>
+  </header>
+
+  <main>
+    <p class="page-subtitle">Dernière mise à jour / Last updated — Avril / April 2026</p>
+    <div class="page-title">Politique de Confidentialité</div>
+    <div class="page-subtitle">Privacy Policy</div>
+    <div class="badge">RGPD Conforme · GDPR Compliant</div>
+
+    <!-- ========== FRANÇAIS ========== -->
+    <div class="lang-block">
+      <div class="lang-label">Français</div>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        L'application <strong>FootBalance</strong> est éditée par <strong>Azrousoft</strong>.<br>
+        Contact : <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a><br>
+        Site web : <a href="https://www.azrousoft.com" target="_blank" rel="noopener">www.azrousoft.com</a>
+      </p>
+
+      <h2>2. Données collectées</h2>
+      <p>Dans le cadre de l'utilisation de FootBalance, nous collectons les données suivantes :</p>
+      <ul>
+        <li>Adresse e-mail</li>
+        <li>Prénom</li>
+        <li>Données d'entraînement (sessions, performances, statistiques footballistiques)</li>
+        <li>Identifiant de connexion Facebook (si vous utilisez Facebook Login)</li>
+      </ul>
+
+      <h2>3. Finalité du traitement</h2>
+      <p>Vos données sont utilisées exclusivement pour :</p>
+      <ul>
+        <li>Créer et gérer votre compte utilisateur</li>
+        <li>Afficher et sauvegarder vos données d'entraînement</li>
+        <li>Améliorer l'expérience de l'application</li>
+      </ul>
+
+      <h2>4. Connexion via Facebook Login</h2>
+      <div class="highlight-box">
+        FootBalance propose la connexion via <strong>Facebook Login (Meta Platforms)</strong>. Lors de cette authentification, nous recevons uniquement votre e-mail et votre prénom. Aucune autre donnée Meta n'est collectée ni stockée. Consultez la politique de Meta à l'adresse : <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener">facebook.com/policy.php</a>
+      </div>
+
+      <h2>5. Partage des données</h2>
+      <p>
+        Vos données personnelles <strong>ne sont jamais revendues ni partagées</strong> avec des tiers à des fins commerciales. Aucune donnée n'est cédée à des annonceurs ou à des partenaires marketing.
+      </p>
+
+      <h2>6. Hébergement et sécurité</h2>
+      <p>
+        Vos données sont hébergées sur les serveurs <strong>Amazon Web Services (AWS), région Europe</strong>. AWS applique des mesures de sécurité de niveau entreprise conformes aux réglementations européennes.
+      </p>
+
+      <h2>7. Durée de conservation</h2>
+      <p>
+        Vos données sont conservées tant que votre compte est actif. En cas de suppression, elles sont effacées dans un délai de 30 jours.
+      </p>
+
+      <h2>8. Vos droits (RGPD)</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+      <ul>
+        <li>Droit d'accès à vos données</li>
+        <li>Droit de rectification</li>
+        <li>Droit à l'effacement ("droit à l'oubli")</li>
+        <li>Droit à la portabilité des données</li>
+        <li>Droit d'opposition au traitement</li>
+      </ul>
+      <div class="highlight-box">
+        Pour exercer vos droits ou demander la suppression de vos données, contactez-nous à : <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a>. Nous répondrons dans un délai de 30 jours.
+      </div>
+
+      <h2>9. Cookies</h2>
+      <p>
+        FootBalance est une application mobile. Aucun cookie de traçage n'est déposé. Des données de session peuvent être stockées localement sur votre appareil à des fins techniques uniquement.
+      </p>
+
+      <h2>10. Modifications</h2>
+      <p>
+        Azrousoft se réserve le droit de modifier cette politique. Toute modification substantielle sera notifiée dans l'application ou par e-mail.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ========== ENGLISH ========== -->
+    <div class="lang-block">
+      <div class="lang-label">English</div>
+
+      <div style="font-size:1.4rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; letter-spacing:-0.02em;">Privacy Policy</div>
+      <p style="margin-bottom:1.5rem;">Last updated — April 2026</p>
+
+      <h2>1. Data Controller</h2>
+      <p>
+        The <strong>FootBalance</strong> application is published by <strong>Azrousoft</strong>.<br>
+        Contact: <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a><br>
+        Website: <a href="https://www.azrousoft.com" target="_blank" rel="noopener">www.azrousoft.com</a>
+      </p>
+
+      <h2>2. Data Collected</h2>
+      <p>When using FootBalance, we collect the following data:</p>
+      <ul>
+        <li>Email address</li>
+        <li>First name</li>
+        <li>Training data (sessions, performance, football statistics)</li>
+        <li>Facebook login identifier (if you use Facebook Login)</li>
+      </ul>
+
+      <h2>3. Purpose of Processing</h2>
+      <p>Your data is used exclusively to:</p>
+      <ul>
+        <li>Create and manage your user account</li>
+        <li>Display and save your training data</li>
+        <li>Improve the application experience</li>
+      </ul>
+
+      <h2>4. Facebook Login</h2>
+      <div class="highlight-box">
+        FootBalance offers sign-in via <strong>Facebook Login (Meta Platforms)</strong>. During authentication, we receive only your email and first name. No other Meta data is collected or stored. See Meta's policy at: <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener">facebook.com/policy.php</a>
+      </div>
+
+      <h2>5. Data Sharing</h2>
+      <p>
+        Your personal data is <strong>never sold or shared</strong> with third parties for commercial purposes. No data is passed to advertisers or marketing partners.
+      </p>
+
+      <h2>6. Hosting &amp; Security</h2>
+      <p>
+        Your data is hosted on <strong>Amazon Web Services (AWS) servers, European region</strong>. AWS applies enterprise-grade security measures compliant with European regulations.
+      </p>
+
+      <h2>7. Data Retention</h2>
+      <p>
+        Your data is retained as long as your account is active. Upon deletion, data is erased within 30 days.
+      </p>
+
+      <h2>8. Your Rights (GDPR)</h2>
+      <p>Under the General Data Protection Regulation (GDPR), you have the following rights:</p>
+      <ul>
+        <li>Right of access to your data</li>
+        <li>Right to rectification</li>
+        <li>Right to erasure ("right to be forgotten")</li>
+        <li>Right to data portability</li>
+        <li>Right to object to processing</li>
+      </ul>
+      <div class="highlight-box">
+        To exercise your rights or request data deletion, contact us at: <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a>. We will respond within 30 days.
+      </div>
+
+      <h2>9. Cookies</h2>
+      <p>
+        FootBalance is a mobile application. No tracking cookies are used. Session data may be stored locally on your device for technical purposes only.
+      </p>
+
+      <h2>10. Changes</h2>
+      <p>
+        Azrousoft reserves the right to modify this policy. Any material change will be notified in the application or by email.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://www.azrousoft.com" target="_blank" rel="noopener">← Retour au site / Back to website</a>
+    <p>© 2026 Azrousoft · FootBalance · <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suppression de données – FootBalance</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #1f2f1f;
+      --green: #2ecc71;
+      --green-dim: #1a7a42;
+      --green-hover: #27ae60;
+      --text: #e2e8e2;
+      --muted: #8a9e8a;
+      --white: #ffffff;
+      --red-dim: #2a0a0a;
+      --red-border: #5c1a1a;
+      --red-text: #e07070;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span { color: var(--green); }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .page-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .lang-block { margin-bottom: 3.5rem; }
+
+    .lang-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lang-label::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 14px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.75rem 0;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+
+    /* CTA card */
+    .cta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .cta-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .cta-card .cta-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-card .cta-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-delete {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: #000;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.15s ease;
+    }
+
+    .btn-delete:hover {
+      background: var(--green-hover);
+      text-decoration: none;
+    }
+
+    .btn-delete svg {
+      flex-shrink: 0;
+    }
+
+    /* delay badge */
+    .delay-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .delay-badge {
+      display: inline-block;
+      background: var(--green-dim);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    /* step list */
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0;
+      counter-reset: steps;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      padding: 0.4rem 0 0.4rem 2.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 1.3rem;
+      height: 1.3rem;
+      background: var(--green-dim);
+      color: var(--green);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    /* what gets deleted box */
+    .deleted-box {
+      background: var(--red-dim);
+      border: 1px solid var(--red-border);
+      border-left: 3px solid var(--red-text);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+
+    .deleted-box ul li::before { color: var(--red-text); }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--green);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1rem 4rem; }
+      .page-title { font-size: 1.5rem; }
+      header { padding: 1rem; }
+      .cta-card { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-icon">⚽</div>
+    <div>
+      <div class="logo-text">FootBalance <span>by Azrousoft</span></div>
+      <div class="logo-sub">Football Training Tracker</div>
+    </div>
+  </header>
+
+  <main>
+    <p class="page-meta">Dernière mise à jour / Last updated — Avril / April 2026</p>
+    <div class="page-title">Suppression de données</div>
+    <p class="page-meta">Data Deletion Request</p>
+
+    <!-- ========== FRANÇAIS ========== -->
+    <div class="lang-block">
+      <div class="lang-label">Français</div>
+
+      <h2>Votre droit à l'effacement</h2>
+      <p>
+        Conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong>, vous avez le droit de demander la suppression complète et définitive de toutes vos données personnelles détenues par Azrousoft dans le cadre de l'application FootBalance.
+      </p>
+
+      <h2>Données concernées par la suppression</h2>
+      <div class="deleted-box">
+        <ul>
+          <li>Votre adresse e-mail et prénom</li>
+          <li>Votre identifiant de connexion (Facebook ou email)</li>
+          <li>L'ensemble de vos données d'entraînement (sessions, performances, statistiques)</li>
+          <li>Votre compte utilisateur et toutes les données associées</li>
+        </ul>
+      </div>
+      <p>Une fois supprimées, ces données sont <strong>définitivement irrécupérables</strong>.</p>
+
+      <h2>Comment faire votre demande</h2>
+      <ol class="steps">
+        <li>Cliquez sur le bouton ci-dessous pour ouvrir un e-mail pré-rempli</li>
+        <li>Vérifiez que l'objet et le message sont corrects</li>
+        <li>Envoyez l'e-mail depuis l'adresse associée à votre compte FootBalance</li>
+        <li>Vous recevrez une confirmation dans les meilleurs délais</li>
+      </ol>
+
+      <div class="cta-card">
+        <span class="icon">🗑️</span>
+        <div class="cta-title">Demander la suppression de mes données</div>
+        <div class="cta-desc">Un e-mail pré-rempli s'ouvrira dans votre application de messagerie.</div>
+        <a class="btn-delete"
+           href="mailto:admin@azrousof.fr?subject=Demande%20de%20suppression%20de%20donn%C3%A9es%20FootBalance&body=Bonjour%2C%0A%0AJe%20souhaite%20exercer%20mon%20droit%20%C3%A0%20l%27effacement%20et%20demande%20la%20suppression%20compl%C3%A8te%20de%20toutes%20mes%20donn%C3%A9es%20personnelles%20associ%C3%A9es%20%C3%A0%20mon%20compte%20FootBalance.%0A%0AAdresse%20e-mail%20du%20compte%20%3A%20%5BVotre%20adresse%20e-mail%5D%0A%0AMerci.">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Envoyer la demande par e-mail
+        </a>
+        <div class="delay-row">
+          <span class="delay-badge">Délai</span>
+          Traitement sous <strong style="color:var(--text);">&nbsp;30 jours maximum</strong>
+        </div>
+      </div>
+
+      <h2>Délai de traitement</h2>
+      <div class="highlight-box">
+        Azrousoft s'engage à traiter votre demande et à supprimer l'intégralité de vos données dans un délai de <strong>30 jours maximum</strong> à compter de la réception de votre demande. Vous recevrez un e-mail de confirmation une fois la suppression effectuée.
+      </div>
+
+      <h2>Alternatives à la suppression</h2>
+      <p>
+        Si vous souhaitez uniquement <strong>corriger</strong> ou <strong>exporter</strong> vos données sans les supprimer, vous pouvez également nous contacter à <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a> en précisant votre demande.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ========== ENGLISH ========== -->
+    <div class="lang-block">
+      <div class="lang-label">English</div>
+
+      <div style="font-size:1.4rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; letter-spacing:-0.02em;">Data Deletion Request</div>
+      <p style="margin-bottom:1.5rem;">Last updated — April 2026</p>
+
+      <h2>Your Right to Erasure</h2>
+      <p>
+        Under the <strong>General Data Protection Regulation (GDPR)</strong>, you have the right to request the complete and permanent deletion of all your personal data held by Azrousoft in connection with the FootBalance application.
+      </p>
+
+      <h2>Data Covered by Deletion</h2>
+      <div class="deleted-box">
+        <ul>
+          <li>Your email address and first name</li>
+          <li>Your login identifier (Facebook or email)</li>
+          <li>All your training data (sessions, performance, statistics)</li>
+          <li>Your user account and all associated data</li>
+        </ul>
+      </div>
+      <p>Once deleted, this data is <strong>permanently unrecoverable</strong>.</p>
+
+      <h2>How to Submit Your Request</h2>
+      <ol class="steps">
+        <li>Click the button below to open a pre-filled email</li>
+        <li>Check that the subject and message are correct</li>
+        <li>Send the email from the address linked to your FootBalance account</li>
+        <li>You will receive a confirmation as soon as possible</li>
+      </ol>
+
+      <div class="cta-card">
+        <span class="icon">🗑️</span>
+        <div class="cta-title">Request deletion of my data</div>
+        <div class="cta-desc">A pre-filled email will open in your mail application.</div>
+        <a class="btn-delete"
+           href="mailto:admin@azrousof.fr?subject=FootBalance%20Data%20Deletion%20Request&body=Hello%2C%0A%0AI%20would%20like%20to%20exercise%20my%20right%20to%20erasure%20and%20request%20the%20complete%20deletion%20of%20all%20my%20personal%20data%20associated%20with%20my%20FootBalance%20account.%0A%0AAccount%20email%20address%3A%20%5BYour%20email%20address%5D%0A%0AThank%20you.">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Send request by email
+        </a>
+        <div class="delay-row">
+          <span class="delay-badge">Deadline</span>
+          Processed within <strong style="color:var(--text);">&nbsp;30 days maximum</strong>
+        </div>
+      </div>
+
+      <h2>Processing Time</h2>
+      <div class="highlight-box">
+        Azrousoft commits to processing your request and deleting all your data within <strong>30 days maximum</strong> of receiving your request. You will receive a confirmation email once deletion is complete.
+      </div>
+
+      <h2>Alternatives to Deletion</h2>
+      <p>
+        If you only wish to <strong>correct</strong> or <strong>export</strong> your data without deleting it, you may also contact us at <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a> specifying your request.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://www.azrousoft.com" target="_blank" rel="noopener">← Retour au site / Back to website</a>
+    <p>© 2026 Azrousoft · FootBalance · <a href="mailto:admin@azrousof.fr">admin@azrousof.fr</a></p>
+  </footer>
+
+</body>
+</html>
