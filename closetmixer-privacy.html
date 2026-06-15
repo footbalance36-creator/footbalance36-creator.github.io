@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité – ClosetMixer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2218;
+      --gold: #C9A84C;
+      --gold-dim: #6b5420;
+      --text: #e8e0d0;
+      --muted: #9e9080;
+      --white: #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span { color: var(--gold); }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .page-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold-dim);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 2.5rem;
+    }
+
+    .lang-block { margin-bottom: 3.5rem; }
+
+    .lang-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lang-label::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.75rem 0;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer a { color: var(--gold); font-size: 0.9rem; font-weight: 600; }
+    footer p { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1rem 4rem; }
+      .page-title { font-size: 1.5rem; }
+      header { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-icon">👗</div>
+    <div>
+      <div class="logo-text">ClosetMixer <span>by Azrousoft</span></div>
+      <div class="logo-sub">Smart Wardrobe & Outfit Generator</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-title">Politique de Confidentialité</div>
+    <div class="page-subtitle">Dernière mise à jour / Last updated — Juin / June 2026</div>
+    <div class="badge">100 % Local · Aucun compte requis · No Account Required</div>
+
+    <!-- ========== FRANÇAIS ========== -->
+    <div class="lang-block">
+      <div class="lang-label">Français</div>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        L'application <strong>ClosetMixer</strong> est éditée par <strong>Azrousoft</strong>.<br>
+        Contact : <a href="mailto:azrousoftthefirst@gmail.com">azrousoftthefirst@gmail.com</a>
+      </p>
+
+      <h2>2. Principe fondamental — données locales</h2>
+      <div class="highlight-box">
+        ClosetMixer <strong>ne collecte, ne transmet et ne stocke aucune donnée personnelle sur des serveurs distants.</strong> Toutes vos informations (vêtements, photos, tenues, préférences) sont enregistrées exclusivement sur votre appareil.
+      </div>
+
+      <h2>3. Données stockées sur l'appareil</h2>
+      <p>ClosetMixer enregistre localement :</p>
+      <ul>
+        <li>Les photos de vêtements que vous ajoutez (dans le stockage interne de l'app)</li>
+        <li>Les métadonnées de vos articles (catégorie, couleur, matière, style)</li>
+        <li>Les tenues composées et le calendrier de planification</li>
+        <li>Vos préférences (genre, style culturel, langue)</li>
+      </ul>
+      <p>Ces données <strong>ne quittent jamais votre téléphone</strong> et sont supprimées avec l'application.</p>
+
+      <h2>4. Permissions utilisées</h2>
+      <ul>
+        <li><strong>Stockage / Galerie</strong> — pour sélectionner les photos de vêtements</li>
+        <li><strong>Localisation (approximative)</strong> — uniquement pour récupérer la météo locale via Open-Meteo (service sans compte, sans clé API). Vos coordonnées GPS ne sont pas stockées.</li>
+      </ul>
+
+      <h2>5. Service météo tiers</h2>
+      <p>
+        ClosetMixer utilise l'API <strong>Open-Meteo</strong> (<a href="https://open-meteo.com" target="_blank" rel="noopener">open-meteo.com</a>) pour afficher la météo. Seules vos coordonnées GPS approximatives sont transmises à ce service, de manière anonyme, sans identifiant. Aucune donnée personnelle n'est envoyée.
+      </p>
+
+      <h2>6. Absence de compte utilisateur</h2>
+      <p>
+        ClosetMixer ne requiert <strong>aucune inscription, aucun compte, aucun e-mail</strong>. Aucune donnée d'identification n'est collectée.
+      </p>
+
+      <h2>7. Partage de données</h2>
+      <p>
+        Aucune donnée personnelle n'est partagée, revendue ou transmise à des tiers à des fins commerciales ou publicitaires.
+      </p>
+
+      <h2>8. Sécurité</h2>
+      <p>
+        Vos données étant stockées uniquement sur votre appareil, leur sécurité dépend de la protection de votre téléphone (code PIN, chiffrement du système).
+      </p>
+
+      <h2>9. Suppression des données</h2>
+      <p>
+        Pour supprimer toutes vos données, il suffit de désinstaller l'application. Toutes les photos et informations stockées dans le dossier interne de l'app sont effacées définitivement.
+      </p>
+
+      <h2>10. Modifications</h2>
+      <p>
+        Azrousoft se réserve le droit de modifier cette politique. Toute modification sera reflétée sur cette page avec une date de mise à jour.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ========== ENGLISH ========== -->
+    <div class="lang-block">
+      <div class="lang-label">English</div>
+
+      <div style="font-size:1.4rem; font-weight:800; color:var(--white); margin-bottom:0.3rem; letter-spacing:-0.02em;">Privacy Policy</div>
+      <p style="margin-bottom:1.5rem;">Last updated — June 2026</p>
+
+      <h2>1. Data Controller</h2>
+      <p>
+        The <strong>ClosetMixer</strong> application is published by <strong>Azrousoft</strong>.<br>
+        Contact: <a href="mailto:azrousoftthefirst@gmail.com">azrousoftthefirst@gmail.com</a>
+      </p>
+
+      <h2>2. Core Principle — Local Data Only</h2>
+      <div class="highlight-box">
+        ClosetMixer <strong>does not collect, transmit, or store any personal data on remote servers.</strong> All your information (clothes, photos, outfits, preferences) is saved exclusively on your device.
+      </div>
+
+      <h2>3. Data Stored on Device</h2>
+      <p>ClosetMixer stores locally:</p>
+      <ul>
+        <li>Clothing photos you add (in the app's internal storage)</li>
+        <li>Article metadata (category, color, material, style)</li>
+        <li>Composed outfits and planning calendar</li>
+        <li>Your preferences (gender, cultural style, language)</li>
+      </ul>
+      <p>This data <strong>never leaves your phone</strong> and is deleted with the app.</p>
+
+      <h2>4. Permissions Used</h2>
+      <ul>
+        <li><strong>Storage / Gallery</strong> — to select clothing photos</li>
+        <li><strong>Location (approximate)</strong> — only to fetch local weather via Open-Meteo (no account, no API key required). Your GPS coordinates are not stored.</li>
+      </ul>
+
+      <h2>5. Third-Party Weather Service</h2>
+      <p>
+        ClosetMixer uses the <strong>Open-Meteo</strong> API (<a href="https://open-meteo.com" target="_blank" rel="noopener">open-meteo.com</a>) to display weather. Only your approximate GPS coordinates are transmitted to this service, anonymously, without any identifier. No personal data is sent.
+      </p>
+
+      <h2>6. No User Account</h2>
+      <p>
+        ClosetMixer requires <strong>no registration, no account, no email address</strong>. No identifying data is collected.
+      </p>
+
+      <h2>7. Data Sharing</h2>
+      <p>
+        No personal data is shared, sold, or transferred to third parties for commercial or advertising purposes.
+      </p>
+
+      <h2>8. Security</h2>
+      <p>
+        Since your data is stored only on your device, its security depends on your phone's protection (PIN, system encryption).
+      </p>
+
+      <h2>9. Data Deletion</h2>
+      <p>
+        To delete all your data, simply uninstall the app. All photos and information stored in the app's internal folder are permanently erased.
+      </p>
+
+      <h2>10. Changes</h2>
+      <p>
+        Azrousoft reserves the right to modify this policy. Any change will be reflected on this page with an updated date.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://azrousoft.com" target="_blank" rel="noopener">← Retour au site / Back to website</a>
+    <p>© 2026 Azrousoft · ClosetMixer · <a href="mailto:azrousoftthefirst@gmail.com">azrousoftthefirst@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
